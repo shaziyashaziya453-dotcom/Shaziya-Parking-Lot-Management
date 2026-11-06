@@ -1,0 +1,77 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaziya Parking Lot Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Shaziya Parking Lot Management System</h1>
+    <p>Smart and Simple Parking Management</p>
+</header>
+
+<nav>
+    <a href="#users">Users</a>
+    <a href="#vehicles">Vehicles</a>
+    <a href="#slots">Parking Slots</a>
+    <a href="#records">Parking Records</a>
+</nav>
+
+<main>
+
+    <section id="users">
+        <h2>User Management</h2>
+        <form id="userForm">
+            <input type="hidden" id="userId">
+            <input id="name" placeholder="Name" required>
+            <input id="phone" placeholder="Phone" required>
+            <input id="email" type="email" placeholder="Email" required>
+            <input id="role" placeholder="Role" required>
+            <button type="submit">Save User</button>
+        </form>
+        <div id="userTable"></div>
+    </section>
+
+    <section id="vehicles">
+        <h2>Vehicle Management</h2>
+        <form id="vehicleForm">
+            <input id="vehicleUserId" type="number" placeholder="User ID" required>
+            <input id="vehicleNumber" placeholder="Vehicle Number" required>
+            <input id="vehicleType" placeholder="Vehicle Type" required>
+            <input id="vehicleModel" placeholder="Vehicle Model" required>
+            <button type="submit">Add Vehicle</button>
+        </form>
+        <div id="vehicleTable"></div>
+    </section>
+
+    <section id="slots">
+        <h2>Parking Slot Management</h2>
+        <form id="slotForm">
+            <input id="slotNumber" placeholder="Slot Number" required>
+            <input id="slotVehicleType" placeholder="Vehicle Type" required>
+            <input id="slotLocation" placeholder="Location" required>
+            <button type="submit">Add Slot</button>
+        </form>
+        <div id="slotTable"></div>
+    </section>
+
+    <section id="records">
+        <h2>Parking Records</h2>
+        <form id="recordForm">
+            <input id="recordVehicleId" type="number" placeholder="Vehicle ID" required>
+            <input id="recordSlotId" type="number" placeholder="Slot ID" required>
+            <button type="submit">Vehicle Entry</button>
+        </form>
+        <div id="recordTable"></div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+```

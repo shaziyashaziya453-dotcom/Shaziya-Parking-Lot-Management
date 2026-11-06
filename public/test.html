@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Add Parking Slot</h2>
+
+    <button onclick="addSlot()">Add Slot A1</button>
+    <button onclick="viewSlots()">View Slots</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        async function addSlot() {
+            const response = await fetch('/api/slots', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    slot_number: 'A1',
+                    vehicle_type: 'Car',
+                    location: 'Ground Floor',
+                    status: 'Available'
+                })
+            });
+
+            document.getElementById('result').textContent =
+                JSON.stringify(await response.json(), null, 2);
+        }
+
+        async function viewSlots() {
+            const response = await fetch('/api/slots');
+            document.getElementById('result').textContent =
+                JSON.stringify(await response.json(), null, 2);
+        }
+    </script>
+</body>
+</html>
